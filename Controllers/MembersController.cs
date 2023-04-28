@@ -30,7 +30,23 @@ public class MembersController : ControllerBase
         var member = new Member
         {
             LastName = model.LastName,
-            FirstName = model.FirstName
+            FirstName = model.FirstName,
+            Type = model.Type,
+            Address = model.Address,
+            City = model.City,
+            State = model.State,
+            ZIP = model.ZIP,
+            Birthdate = model.Birthdate,
+            Expiration = model.Expiration, 
+            HomePhoneNumber = model.HomePhoneNumber,
+            BusinessPhoneNumber = model.BusinessPhoneNumber,
+            CellPhoneNumber  = model.CellPhoneNumber,
+            Gender = model.Gender, 
+            IsActive = model.IsActive, 
+            IsHeadHousehold = model.IsHeadHousehold,
+            Volunteer = model.Volunteer, 
+            Occupation = model.Occupation,
+            Email = model.Email
         };
         var newMember = await this.memberCollection.Create(member);
         return Created("", member);

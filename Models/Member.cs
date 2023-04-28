@@ -19,7 +19,7 @@ public class Member
     public string? CellPhoneNumber { get; set; }
     public Gender Gender { get; set; }
     public bool IsActive { get; set; }
-    public Membership Membership { get; set; }
+    public bool IsHeadHousehold { get; set; }
     public string? Volunteer { get; set; }
     public string? Occupation { get; set; }
     public string? Email { get; set; }
