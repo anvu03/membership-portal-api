@@ -4,13 +4,7 @@ public enum Gender
     Female
 }
 
-public enum Membership
-{
-    HH,
-    None
-}
-
-public enum Type
+public enum MemberType
 {
     Family,
     Supporting,
