@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 
 namespace MembershipPortalAPI.Controllers;
 
@@ -31,13 +32,13 @@ public class MembersController : ControllerBase
         {
             LastName = model.LastName,
             FirstName = model.FirstName,
-            Type = model.Type,
+            MemberType = model.MemberType,
             Address = model.Address,
             City = model.City,
             State = model.State,
             ZIP = model.ZIP,
-            Birthdate = model.Birthdate,
-            Expiration = model.Expiration, 
+            BirthDate = model.BirthDate,
+            ExpirationDate = model.Expiration, 
             HomePhoneNumber = model.HomePhoneNumber,
             BusinessPhoneNumber = model.BusinessPhoneNumber,
             CellPhoneNumber  = model.CellPhoneNumber,
@@ -50,5 +51,13 @@ public class MembersController : ControllerBase
         };
         var newMember = await this.memberCollection.Create(member);
         return Created("", member);
+    }
+
+    [HttpGet]
+    [Route("{id}")]
+    public async Task<IActionResult> GetById([FromQuery] string id)
+    {
+      var member = await this.memberCollection.GetById(ObjectId.Parse(id));
+      return Ok(member);
     }
 }

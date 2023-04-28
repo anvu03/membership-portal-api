@@ -12,8 +12,8 @@ public class Member
     public string? City { get; set; }
     public string State { get; set; }
     public string? ZIP { get; set; }
-    public DateTime Birthdate { get; set; }
-    public DateTime Expiration { get; set; }
+    public DateTime BirthDate { get; set; }
+    public DateTime ExpirationDate { get; set; }
     public string? HomePhoneNumber { get; set; }
     public string? BusinessPhoneNumber { get; set; }
     public string? CellPhoneNumber { get; set; }

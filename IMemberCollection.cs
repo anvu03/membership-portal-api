@@ -5,6 +5,7 @@ public interface IMemberCollection
 {
     Task<Member> Create(Member member);
     Task<IEnumerable<Member>> Find();
+    Task<Member> GetById(ObjectId objectId);
 }
 
 public class MemberCollection : IMemberCollection
