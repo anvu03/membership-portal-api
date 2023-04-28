@@ -18,9 +18,9 @@ public class MembersController : ControllerBase
 
     [HttpGet(Name = "search")]
     [Route("search")]
-    public async Task<IActionResult> Search()
+    public async Task<IActionResult> Search([FromQuery] MemberSearchQuery query)
     {
-        var members = await this.memberCollection.Find();
+        var members = await this.memberCollection.Find(query);
 
         return Ok(members);
     }
